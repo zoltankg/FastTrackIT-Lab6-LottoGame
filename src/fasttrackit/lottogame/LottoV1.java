@@ -37,6 +37,7 @@ public class LottoV1 {
 
             sixGeneratedNumbers[i] = nr;
 
+            // wait , not necessary anyway 
             try {
                 Thread.currentThread().sleep(1);
             } catch (InterruptedException e) {
