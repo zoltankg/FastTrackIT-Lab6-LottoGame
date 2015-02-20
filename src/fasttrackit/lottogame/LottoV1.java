@@ -18,7 +18,25 @@ public class LottoV1 {
         // here is the simple and the most dummy idea
 
         // 1 read
-        int[] myNumbers = {4, 9, 22, 35, 29, 44};
+        int[] myNumbers = new int[6];
+        Random myNumbersMachine = new Random();
+       
+        for (int i = 0; i < 6; i++) {
+            int nr = myNumbersMachine.nextInt(49) + 1;
+            //check if nr is not already in the array, if it is generate a new one
+            for (int j = 0; j < i; j++)
+                if (myNumbers[j] == nr) nr = myNumbersMachine.nextInt(49) + 1;
+            myNumbers[i] = nr;
+        }
+        // here are my numbers
+        System.out.println("here are my numbers:");
+        for (int i = 0; i < 6; i++)
+            System.out.print(myNumbers[i] + " |");
+
+        System.out.println("");
+
+
+
 
         // 2 prepare the lotto machine and init it
         Random lottoMachine = new Random();
@@ -37,7 +55,7 @@ public class LottoV1 {
 
             sixGeneratedNumbers[i] = nr;
 
-            // wait , not necessary anyway 
+            // wait , not necessary anyway
             try {
                 Thread.currentThread().sleep(1);
             } catch (InterruptedException e) {
