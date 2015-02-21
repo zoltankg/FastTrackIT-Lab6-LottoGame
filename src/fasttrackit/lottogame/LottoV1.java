@@ -4,6 +4,9 @@ import java.util.*;
 
 public class LottoV1 {
 
+    private static final int MAXVALUE = 49;
+    private static final int MAX_EXTRACTION_NUMBERS = 6;
+
     public static void main(String[] args) {
 
         //  read users' numbers and store them
@@ -21,19 +24,19 @@ public class LottoV1 {
         // ...
 
         // 1 read
-        int[] myNumbers = new int[6];
+        int[] myNumbers = new int[MAX_EXTRACTION_NUMBERS];
         Random myNumbersMachine = new Random();
        
-        for (int i = 0; i < 6; i++) {
-            int nr = myNumbersMachine.nextInt(49) + 1;
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
+            int nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
             //check if nr is not already in the array, if it is generate a new one
             for (int j = 0; j < i; j++)
-                if (myNumbers[j] == nr) nr = myNumbersMachine.nextInt(49) + 1;
+                if (myNumbers[j] == nr) nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
             myNumbers[i] = nr;
         }
         // here are my numbers
         System.out.println("here are my numbers:");
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
             System.out.print(myNumbers[i] + " |");
 
         System.out.println("");
@@ -46,15 +49,15 @@ public class LottoV1 {
         lottoMachine.setSeed(System.currentTimeMillis());
 
         // 2 generate the numbers
-        int[] sixGeneratedNumbers = new int[6];
-        for (int i = 0; i < 6; i++) {
+        int[] sixGeneratedNumbers = new int[MAX_EXTRACTION_NUMBERS];
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
 
-            int nr = lottoMachine.nextInt(49) + 1;
+            int nr = lottoMachine.nextInt(MAXVALUE) + 1;
 
             //check if nr is not already in the array, if it is generate a new one
             for (int j = 0; j < i; j++)
                 if (sixGeneratedNumbers[j] == nr)
-                    nr = lottoMachine.nextInt(49) + 1;
+                    nr = lottoMachine.nextInt(MAXVALUE) + 1;
 
             sixGeneratedNumbers[i] = nr;
 
@@ -69,17 +72,17 @@ public class LottoV1 {
 
         // 3 print the extraction
         System.out.println("here is the extraction today:");
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
             System.out.print(sixGeneratedNumbers[i] + " |");
 
         System.out.println("");
 
         //compare and tell if won
         int howManyWons = 0;
-        int[] wonNumbers = new int[6];
+        int[] wonNumbers = new int[MAX_EXTRACTION_NUMBERS];
 
-        for (int i = 0; i < 6; i++)
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
+            for (int j = 0; j < MAX_EXTRACTION_NUMBERS; j++) {
 
                 if (myNumbers[i] == sixGeneratedNumbers[j]) {
                     howManyWons++;
@@ -104,7 +107,7 @@ public class LottoV1 {
         }
 
         System.out.println("here is what you won: ");
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
             if (wonNumbers[i] != 0)
                 System.out.print(wonNumbers[i] + " |");
 
