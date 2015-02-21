@@ -17,6 +17,8 @@ public class LottoV1 {
 
         // here is the simple and the most dummy idea
 
+        // comment 
+
         // 1 read
         int[] myNumbers = new int[6];
         Random myNumbersMachine = new Random();
