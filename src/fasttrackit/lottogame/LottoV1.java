@@ -17,7 +17,8 @@ public class LottoV1 {
 
         // here is the simple and the most dummy idea
 
-        // comment 
+        // comment
+        // ...
 
         // 1 read
         int[] myNumbers = new int[6];
