@@ -4,8 +4,8 @@ import java.util.*;
 
 public class LottoV1 {
 
-    private static final int MAXVALUE = 49;
-    private static final int MAX_EXTRACTION_NUMBERS = 6;
+    private static final int MAXVALUE = 40;
+    private static final int MAX_EXTRACTION_NUMBERS = 5;
 
     public static void main(String[] args) {
 
