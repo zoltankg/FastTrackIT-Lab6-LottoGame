@@ -141,4 +141,40 @@ public class LottoV1 {
         return sixGeneratedNumbers;
     }
 
+
+
+    private static Set<Integer> extractSixUniqueNumbers(Random lottoMachine) {
+
+        Set<Integer> sixGeneratedNumbers =  new HashSet<Integer> ();
+
+        int nr;
+
+
+
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
+
+            nr = lottoMachine.nextInt(MAXVALUE) + 1;
+
+            while (!sixGeneratedNumbers.add(nr)) {
+
+                nr = lottoMachine.nextInt(MAXVALUE) + 1;
+
+                sixGeneratedNumbers.add(nr);
+
+            }
+
+        }
+
+
+
+
+
+
+
+        return sixGeneratedNumbers;
+
+    }
+
+
+
 }
