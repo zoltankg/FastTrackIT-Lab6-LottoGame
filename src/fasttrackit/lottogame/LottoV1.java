@@ -23,26 +23,6 @@ public class LottoV1 {
         // comment
         // ...
 
-        // 1 read
-        int[] myNumbers = new int[MAX_EXTRACTION_NUMBERS];
-        Random myNumbersMachine = new Random();
-       
-        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
-            int nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
-            //check if nr is not already in the array, if it is generate a new one
-            for (int j = 0; j < i; j++)
-                if (myNumbers[j] == nr) nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
-            myNumbers[i] = nr;
-        }
-        // here are my numbers
-        System.out.println("here are my numbers:");
-        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
-            System.out.print(myNumbers[i] + " |");
-
-        System.out.println("");
-
-
-
 
         // 2 prepare the lotto machine and init it
         Random lottoMachine = new Random();
@@ -69,6 +49,32 @@ public class LottoV1 {
             }
 
         }
+
+
+
+
+        // 1 read
+        int[] myNumbers = new int[MAX_EXTRACTION_NUMBERS];
+        Random myNumbersMachine = new Random();
+       
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
+            int nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
+            //check if nr is not already in the array, if it is generate a new one
+            for (int j = 0; j < i; j++)
+                if (myNumbers[j] == nr) nr = myNumbersMachine.nextInt(MAXVALUE) + 1;
+            myNumbers[i] = nr;
+        }
+        // here are my numbers
+        System.out.println("here are my numbers:");
+        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++)
+            System.out.print(myNumbers[i] + " |");
+
+        System.out.println("");
+
+
+
+
+
 
         // 3 print the extraction
         System.out.println("here is the extraction today:");
