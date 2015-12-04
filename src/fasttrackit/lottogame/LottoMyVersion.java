@@ -36,7 +36,7 @@ public class LottoMyVersion {
 
     private void generateRandomNumbers() {
         Random random = new Random();
-        for (int i = 1; i <= INPUT_SIZE; i++) {
+        for (int i = 0; i < INPUT_SIZE; i++) {
             randomNumbers.add(random.nextInt(MAX_NUMBER_POSSIBLE));
         }
     }
